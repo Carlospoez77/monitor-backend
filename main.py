@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -11,13 +11,14 @@ def login():
         usuario = request.form.get("usuario")
         contraseña = request.form.get("contraseña")
         if usuario == USUARIO_VALIDO and contraseña == CONTRASEÑA_VALIDA:
-            return render_template("Panel.html")
+            return "<h1>✅ ¡ENTRASTE CORRECTAMENTE!</h1>"
         else:
-            return "Credenciales incorrectas"
+            return "<h1>❌ Credenciales incorrectas</h1>"
     return '''
+<h2>Iniciar Sesión</h2>
 <form method="POST">
-Usuario <input name="usuario"><br>
-Contraseña <input type="password" name="contraseña"><br>
+Usuario <input name="usuario"><br><br>
+Contraseña <input type="password" name="contraseña"><br><br>
 <button type="submit">Entrar</button>
 </form>
 '''

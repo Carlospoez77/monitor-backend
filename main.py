@@ -13,20 +13,21 @@ def login():
         contraseña = request.form.get("contraseña")
         if usuario == USUARIO_VALIDO and contraseña == CONTRASEÑA_VALIDA:
             return '''
-            <h1 style="color:green">✅ Panel de Administrador NEXUS</h1>
-            <p>Bienvenido, dueño de la red social NEXUS</p>
+            <h1 style="color:green">✅ PANEL DE MONITOREO</h1>
+            <p>Plataforma de vigilancia y control de tus agentes y servicios</p>
             <hr>
-            <h3>🔧 Herramientas de Moderación</h3>
+            <h3>📊 Secciones disponibles</h3>
             <ul>
-                <li>Gestión de usuarios</li>
-                <li>Revisión de reportes</li>
-                <li>Configuración de la plataforma</li>
+                <li>Estado de agentes activos</li>
+                <li>Registro de actividades</li>
+                <li>Consumo de créditos</li>
+                <li>Logs y alertas</li>
             </ul>
             '''
         else:
             return "<h1 style='color:red'>❌ Credenciales incorrectas</h1>"
     return '''
-    <h2>Iniciar Sesión</h2>
+    <h2>Iniciar Sesión — Panel de Monitoreo</h2>
     <form method="POST">
     Usuario: <input name="usuario" value="admin"><br><br>
     Contraseña: <input type="password" name="contraseña"><br><br>

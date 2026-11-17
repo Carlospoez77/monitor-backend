@@ -1,4 +1,1 @@
-fastapi
-uvicorn
-aiosqlite
-python-multipart
+flask
